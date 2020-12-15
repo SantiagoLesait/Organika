@@ -4,10 +4,15 @@ import NavBar from "./Components/Navbar";
 
 const theme = createMuiTheme({
   palette: {
-    primary: { main: "#4fd6a2" },
-    secondary: { main: "#63A98E" },
+    primary: { main: "#63cabb" },
+    secondary: { main: "#63a98e" },
   },
-  fontFamily: "Raleway, Arial",
+  typography: {
+    fontFamily: 'Oswald',
+    caption: {
+      fontFamily: "Montserrat"
+    }
+  },
 });
 function App() {
   return (
