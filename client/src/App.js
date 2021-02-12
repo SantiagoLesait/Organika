@@ -3,14 +3,9 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import NavBar from "./Components/Navbar";
 import Texto from "./Components/texto";
 import NotFound from "./Components/NotFound";
+import Blog from "./Components/blog/blog";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const theme = createMuiTheme({
   palette: {
@@ -29,11 +24,10 @@ function App() {
     <Router>
       <ThemeProvider theme={theme}>
         <Fragment>
-          <Switch>
-            <Route path="/" component={NavBar} />
-            <Route exact path="/try" component={Texto} />
-            <Route component={NotFound} />
-          </Switch>
+          <Route path="/" component={NavBar} />
+          <Route exact path="/try" component={Texto} />
+
+          <Route exact path="/blog" component={Blog} />
         </Fragment>
       </ThemeProvider>
     </Router>

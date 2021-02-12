@@ -6,13 +6,15 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    elevation: 0,
   },
   menuButton: {
-    marginRight: theme.spacing(1),
+    marginRight: theme.spacing(0),
   },
   title: {
     flexGrow: 1,
@@ -27,7 +29,7 @@ export default function NavBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed" elevation="0">
         <Toolbar>
           <IconButton
             edge="start"
@@ -40,12 +42,12 @@ export default function NavBar() {
           <Typography variant="h6" className={classes.title}>
             NEWS
           </Typography>
+          <Typography variant="h6" className={classes.title}>
+            <Link to="/blog">BLOG</Link>
+          </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
-      <Button variant="contained" color="secondary">
-        Primary
-      </Button>{" "}
     </div>
   );
 }
