@@ -18,6 +18,8 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    textDecoration: "none",
+    color: "black",
   },
   button: {
     fontFamily: "Montserrat",
@@ -43,7 +45,9 @@ export default function NavBar() {
             NEWS
           </Typography>
           <Typography variant="h6" className={classes.title}>
-            <Link to="/blog">BLOG</Link>
+            <Link to="/blog" className={classes.title}>
+              BLOG
+            </Link>
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
